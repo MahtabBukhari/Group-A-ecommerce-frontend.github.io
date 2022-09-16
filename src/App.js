@@ -1,11 +1,13 @@
 
-import React from 'react'
+import React from 'react';
+import {BrowserRouter as Router} from "react-router-dom";
+import Header from './component/layout/header'
 
 function App() {
   return (
-    <div>
-      app
-    </div>
+    <Router>
+      <Header/>
+    </Router>
   )
 }
 
