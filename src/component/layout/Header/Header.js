@@ -2,16 +2,23 @@ import React from 'react';
 import {ReactNavbar} from "overlay-navbar"
 import logo from '../../../images/logo.png'
 
+const theme={
+  brandColor:"orange",
+  iconColor:"rgb(35,35,35,0.8)",
+  navColor:"rgba(0,0,0,0.4)",
+  linkColor:"rgb(34,35,35,0.8)"
+}
+
 const header = () => {
   return <ReactNavbar
-  burgerColor="#eb4034"
+  burgerColor={theme.brandColor}
 
-  navColor1="rgba(0,0,0,0.4)"
+  navColor1={theme.navColor}
 
   logo={logo}
   logoWidth="20vmax"
   logoHoverSize="10px"
-  logoHoverColor="#eb4034"
+  logoHoverColor={theme.brandColor}
 
 
 
@@ -31,17 +38,17 @@ const header = () => {
   nav4justifyContent="flex-start"
 
   link1Size="1.3vmax"
-  link1Color="rgb(35,35,35,0.8)"
-  link1ColorHover="#eb4034"
+  link1Color={theme.linkColor}
+  link1ColorHover={theme.brandColor}
   link1Margin="1vmax"
 
-  profileIconColor="rgb(35,35,35,0.8)"
-  searchIconColor="rgb(35,35,35,0.8)"
-  cartIconColor="rgb(35,35,35,0.8)"
+  profileIconColor={theme.iconColor}
+  searchIconColor={theme.iconColor}
+  cartIconColor={theme.iconColor}
   
-  profileIconColorHover="#eb4034"
-  searchIconColorHover="#eb4034"
-  cartIconColorHover="#eb4034"
+  profileIconColorHover={theme.brandColor}
+  searchIconColorHover={theme.brandColor}
+  cartIconColorHover={theme.brandColor}
 
   cartIconMargin="1vmax"
   />
