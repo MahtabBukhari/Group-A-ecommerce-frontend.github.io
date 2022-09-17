@@ -1,10 +1,10 @@
 
 import React, { useEffect } from 'react';
-import {BrowserRouter as Router} from "react-router-dom";
-import Header from './component/layout/Header/Header'
-import Footer from './component/layout/Footer/Footer'
-
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import Header from './layout/Header'
+import Footer from './layout/Footer'
 import WebFont from 'webfontloader'
+import Home from "./pages/Home"
 
 function App() {
   useEffect(()=>{
@@ -20,7 +20,7 @@ function App() {
   return (
     <Router>
       <Header/>
-
+<Route exact path="/" component={Home}/>
 
       <Footer/>
     </Router>

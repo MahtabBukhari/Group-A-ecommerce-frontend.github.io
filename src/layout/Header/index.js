@@ -1,11 +1,11 @@
 import React from 'react';
-import {ReactNavbar} from "overlay-navbar"
-import logo from '../../../images/logo.png'
+import {ReactNavbar} from "overlay-navbar";
+import logo from "../../images/logo.png"
 
 const theme={
   brandColor:"orange",
   iconColor:"rgb(35,35,35,0.8)",
-  navColor:"rgba(0,0,0,0.4)",
+  navColor:"white",
   linkColor:"rgb(34,35,35,0.8)"
 }
 
