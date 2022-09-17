@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import './Home.css'
 import { CgMouse } from 'react-icons/all'
 import Products from"../../component/Products";
+import PageHelmet from '../../component/PageHelmet';
 
 
 
@@ -16,6 +17,8 @@ const product={
 const Home = () => {
   return (
    <Fragment>
+
+    <PageHelmet title="ECOMMERCE SHOP"/>
     <div className="banner">
     <p>Welcom to Ecommerce Shop</p>
     <h1>FIND AMAZING PRODUCTS BELOW</h1>
