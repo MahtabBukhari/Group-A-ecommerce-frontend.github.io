@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import './Home.css'
-import { CgMouse } from 'react-icons/all'
+import {icons} from "../../Assets/images"
 import Products from"../../component/Products";
 import PageHelmet from '../../component/PageHelmet';
 
@@ -25,7 +25,7 @@ const Home = () => {
 
     <a href="#container">
         <button>
-            Scroll <CgMouse/>
+            Scroll <icons.IconMouse/>
         </button>
     </a>
     </div>

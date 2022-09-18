@@ -2,10 +2,10 @@
 import React, { useEffect } from 'react';
 import "./App.css"
 import {BrowserRouter as Router, Route} from "react-router-dom";
-import Header from './layout/Header'
-import Footer from './layout/Footer'
+import {layout} from './ReferenceConstant'
+
 import WebFont from 'webfontloader'
-import Home from "./pages/Home"
+import {screens} from "./ReferenceConstant"
 
 function App() {
   useEffect(()=>{
@@ -20,10 +20,10 @@ function App() {
 
   return (
     <Router>
-      <Header/>
-<Route exact path="/" component={Home}/>
+      <layout.Header/>
+<Route exact path="/" component={screens.Home}/>
 
-      <Footer/>
+      <layout.Footer/>
     </Router>
   )
 }

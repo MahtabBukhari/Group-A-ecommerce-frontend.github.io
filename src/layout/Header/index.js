@@ -1,6 +1,6 @@
 import React from 'react';
 import {ReactNavbar} from "overlay-navbar";
-import logo from "../../images/logo.png"
+import {images} from "../../Assets/images"
 
 const theme={
   brandColor:"orange",
@@ -15,7 +15,7 @@ const header = () => {
 
   navColor1={theme.navColor}
 
-  logo={logo}
+  logo={images.logo}
   logoWidth="20vmax"
   logoHoverSize="10px"
   logoHoverColor={theme.brandColor}

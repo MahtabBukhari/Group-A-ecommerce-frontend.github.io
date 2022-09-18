@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.css'
-import playStore from '../../images/Playstore.png'
-import appStore from '../../images/Appstore.png'
+import {images} from '../../Assets/images'
+
 
 const Footer = () => {
   return (
@@ -9,8 +9,8 @@ const Footer = () => {
     <div className="leftfooter">
       <h4>DOWNLOAD APP</h4>
       <p>Download our app for Android and IOS mobile phones</p>
-      <img src={playStore} alt="PlayStore" />
-      <img src={appStore} alt="AppStore" />
+      <img src={images.Playstore} alt="PlayStore" />
+      <img src={images.Appstore} alt="AppStore" />
     </div>
 
     <div className="midfooter">
