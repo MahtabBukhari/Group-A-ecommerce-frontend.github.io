@@ -6,6 +6,7 @@ import PageHelmet from '../../component/PageHelmet';
 import { getAllProducts } from '../../Redux/Actions/productActions';
 import {useDispatch, useSelector} from "react-redux"
 import Loader from '../../component/Loader';
+import { useAlert } from 'react-alert';
 
 
 // const product={
@@ -17,14 +18,18 @@ import Loader from '../../component/Loader';
 // }
 
 const Home = () => {
+    const alert = useAlert()
     const dispatch = useDispatch()
     const {loading,error,products,productsCount}=useSelector((state)=>state.products)
 
 
     useEffect(()=>{
+        if(error){
+           return alert.error(error)
+        }
         //only pass function name not paranthesis
          dispatch(getAllProducts)
-    },[dispatch])
+    },[dispatch, error, alert])
    
     
   return (

@@ -14,7 +14,7 @@ const Products = ({product}) => {
     value:product.ratings,
     isHalf:true,
     activeColor:'tomato',
-    size:window.innerWidth < 600 ? 20 : 25
+    size:window.innerWidth < 600 ? 30 : 25
 }
 
 
