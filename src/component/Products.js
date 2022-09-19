@@ -9,7 +9,7 @@ import ReactStar from "react-star-rating-component";
 const Products = ({product}) => {
 
   const options={
-  
+  name:"",
     edit:false,
     value:product.ratings,
     isHalf:true,

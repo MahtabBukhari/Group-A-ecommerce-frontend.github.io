@@ -5,15 +5,16 @@ import Products from "../../component/Products"
 import PageHelmet from '../../component/PageHelmet';
 import { getAllProducts } from '../../Redux/Actions/productActions';
 import {useDispatch, useSelector} from "react-redux"
+import Loader from '../../component/Loader';
 
 
-const product={
-    images:[{url:"https://5.imimg.com/data5/PJ/DI/MY-3877854/round-neck-plain-tshirt-with-multi-color-design-1000x1000.png"}],
-    name:"T-Shirt",
-    price:"$30",
-    _id:"abidf"
+// const product={
+//     images:[{url:"https://5.imimg.com/data5/PJ/DI/MY-3877854/round-neck-plain-tshirt-with-multi-color-design-1000x1000.png"}],
+//     name:"T-Shirt",
+//     price:"$30",
+//     _id:"abidf"
 
-}
+// }
 
 const Home = () => {
     const dispatch = useDispatch()
@@ -27,31 +28,37 @@ const Home = () => {
    
     
   return (
-   <Fragment>
-
-    <PageHelmet title="ECOMMERCE SHOP"/>
-    <div className="banner">
-    <p>Welcom to Ecommerce Shop</p>
-    <h1>FIND AMAZING PRODUCTS BELOW</h1>
-
-    <a href="#container">
-        <button>
-            Scroll <icons.IconMouse/>
-        </button>
-    </a>
-    </div>
-
-    <h1 className='homeheading'>Featured Products</h1>
-
-    <div className="container" id="container">
-
-        {products && products.map((product)=>(
-            <Products key={product._id}  product={product}/>
-        ))}
   
-    </div>
+    <Fragment>
+        {
+            loading? (<Loader/>):  <Fragment>
 
-   </Fragment>
+            <PageHelmet title="ECOMMERCE SHOP"/>
+            <div className="banner">
+            <p>Welcom to Ecommerce Shop</p>
+            <h1>FIND AMAZING PRODUCTS BELOW</h1>
+        
+            <a href="#container">
+                <button>
+                    Scroll <icons.IconMouse/>
+                </button>
+            </a>
+            </div>
+        
+            <h1 className='homeheading'>Featured Products</h1>
+        
+            <div className="container" id="container">
+        
+                {products && products.map((product)=>(
+                    <Products key={product._id}  product={product}/>
+                ))}
+          
+            </div>
+        
+           </Fragment>
+        }
+    </Fragment>
+  
   )
 }
 

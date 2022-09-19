@@ -7,6 +7,8 @@ import {layout} from './ReferenceConstant'
 import WebFont from 'webfontloader'
 import {screens} from "./ReferenceConstant"
 
+
+
 function App() {
   useEffect(()=>{
     WebFont.load({
@@ -22,6 +24,7 @@ function App() {
     <Router>
       <layout.Header/>
 <Route exact path="/" component={screens.Home}/>
+
 
       <layout.Footer/>
     </Router>
