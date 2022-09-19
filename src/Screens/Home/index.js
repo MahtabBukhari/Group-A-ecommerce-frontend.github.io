@@ -1,9 +1,10 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import './Home.css'
 import {icons} from "../../Assets/images"
-import Products from"../../component/Products";
+import Products from "../../component/Products"
 import PageHelmet from '../../component/PageHelmet';
-
+import { getAllProducts } from '../../Redux/Actions/productActions';
+import {useDispatch, useSelector} from "react-redux"
 
 
 const product={
@@ -15,6 +16,16 @@ const product={
 }
 
 const Home = () => {
+    const dispatch = useDispatch()
+    const {loading,error,products,productsCount}=useSelector((state)=>state.products)
+
+
+    useEffect(()=>{
+        //only pass function name not paranthesis
+         dispatch(getAllProducts)
+    },[dispatch])
+   
+    
   return (
    <Fragment>
 
@@ -33,15 +44,11 @@ const Home = () => {
     <h1 className='homeheading'>Featured Products</h1>
 
     <div className="container" id="container">
-    <Products  product={product}/>
-    <Products  product={product}/>
-    <Products  product={product}/>
-    <Products  product={product}/>
-    <Products  product={product}/>
-    <Products  product={product}/>
-    <Products  product={product}/>
-    <Products  product={product}/>
 
+        {products && products.map((product)=>(
+            <Products key={product._id}  product={product}/>
+        ))}
+  
     </div>
 
    </Fragment>
