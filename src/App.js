@@ -24,6 +24,7 @@ function App() {
     <Router>
       <layout.Header/>
 <Route exact path="/" component={screens.Home}/>
+<Route  exact path="/product/:id" component={screens.ProductDetail}/>
 
 
       <layout.Footer/>

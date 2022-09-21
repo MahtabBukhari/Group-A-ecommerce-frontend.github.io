@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-import {ALL_PRODUCT_FAIL,ALL_PRODUCT_REQUEST,ALL_PRODUCT_SUCCESS,CLEAR_ERROR} from "../Types/productConstants";
+import {ALL_PRODUCT_FAIL,ALL_PRODUCT_REQUEST,ALL_PRODUCT_SUCCESS,CLEAR_ERROR, PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS} from "../Types/productConstants";
 
 
 export const getAllProducts=async(dispatch)=>{
@@ -28,4 +28,22 @@ export const getAllProducts=async(dispatch)=>{
 
 export const clearErrors=(dispatch)=>{
     dispatch({type:CLEAR_ERROR})
+}
+
+
+
+// PRODUCT DETAIL
+
+export const getProductDetail=(id)=>async(dispatch)=>{
+    dispatch({type:PRODUCT_DETAILS_REQUEST})
+    try {
+        const {data} = await axios.get(`/api/v1/product/${id}`)
+
+        dispatch({type:PRODUCT_DETAILS_SUCCESS,payload:data})
+        
+    } catch (error) {
+
+        dispatch({type:PRODUCT_DETAILS_FAIL,payload:error.response.data.massage})
+        
+    }
 }
