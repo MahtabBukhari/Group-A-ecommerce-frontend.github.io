@@ -23,12 +23,12 @@ const header = () => {
 
 
   link1Text="Home"
-  link2Text="Product"
+  link2Text="Products"
   link3Text="Contact"
   link4Text="About"
 
   link1Url="/"
-  link2Url="/product"
+  link2Url="/products"
   link3Url="/contact"
   link4Url="/about"
 

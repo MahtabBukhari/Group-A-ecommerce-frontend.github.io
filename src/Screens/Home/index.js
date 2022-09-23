@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react'
 import './Home.css'
 import {icons} from "../../Assets/images"
-import Products from "../../component/Products"
+import ProductCard from "../../component/ProductCard"
 import PageHelmet from '../../component/PageHelmet';
 import { getAllProducts } from '../../Redux/Actions/productActions';
 import {useDispatch, useSelector} from "react-redux"
@@ -55,7 +55,7 @@ const Home = () => {
             <div className="container" id="container">
         
                 {products && products.map((product)=>(
-                    <Products key={product._id}  product={product}/>
+                    <ProductCard key={product._id}  product={product}/>
                 ))}
           
             </div>

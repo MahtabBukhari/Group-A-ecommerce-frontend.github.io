@@ -6,7 +6,7 @@ import ReactStar from "react-star-rating-component";
 
 
 
-const Products = ({product}) => {
+const productCard = ({product}) => {
 
   const options={
   name:"",
@@ -36,4 +36,4 @@ const Products = ({product}) => {
   )
 }
 
-export default Products
+export default productCard
