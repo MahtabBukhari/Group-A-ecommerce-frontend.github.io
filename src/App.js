@@ -4,6 +4,7 @@ import "./App.css"
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import {layout} from './ReferenceConstant'
 
+import Search from './component/Search';
 import WebFont from 'webfontloader'
 import {screens} from "./ReferenceConstant"
 
@@ -26,6 +27,8 @@ function App() {
 <Route exact path="/" component={screens.Home}/>
 <Route  exact path="/product/:id" component={screens.ProductDetail}/>
 <Route exact path="/products"  component={screens.Products} />
+<Route path="/products/:keyword"  component={screens.Products} />
+<Route exact path="/Search" component={Search}/>
 
 
       <layout.Footer/>

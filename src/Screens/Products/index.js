@@ -5,19 +5,28 @@ import {
   clearErrors,
   getAllProducts,
 } from "../../Redux/Actions/productActions";
+import {useAlert} from "react-alert"
 import Loader from "../../component/Loader";
 import ProductCard from "../../component/ProductCard";
 import { useEffect } from "react";
 
-const Products = () => {
+const Products = ({match}) => {
   const dispatch = useDispatch();
+  const alert = useAlert();
   const { products, loading, error, productsCount } = useSelector(
     (state) => state.products
   );
 
+  let keyword = match.params.keyword
+
   useEffect(() => {
-    dispatch(getAllProducts);
-  }, [dispatch]);
+    if(error){
+      alert.error(error)
+      dispatch(clearErrors())
+
+    }
+    dispatch(getAllProducts(keyword));
+  }, [dispatch,keyword,alert,error]);
   return (
     <div>
       <Fragment>
