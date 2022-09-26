@@ -4,14 +4,15 @@ import "./Search.css"
 
 
 const Search = () => {
-    const history = useHistory()
-
+    
     const [keyword, setKeyword]=useState("")
+
+    const history = useHistory()
 
     const handleSearchSubmit=(e)=>{
         e.preventDefault()
         if(keyword.trim()){
-               history.push(`/products/${keyword}`)
+            history.push(`/products/${keyword}`)
         }else{
              history.push('/products')
         }

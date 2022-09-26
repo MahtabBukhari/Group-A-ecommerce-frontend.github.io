@@ -16,7 +16,8 @@ export const productReducer=(state={},action)=>{
 
                 // here getProducts and productsCount is comming from server or return by server
                 products:action.payload.getProducts,
-                productsCount:action.payload.productsCount
+                productsCount:action.payload.productsCount,
+                resultPerPage:action.payload.resultPerPage
             }
         case ALL_PRODUCT_FAIL:
             return{
