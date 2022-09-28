@@ -2,11 +2,12 @@ import React, { Fragment, useEffect } from "react";
 import "./productDetail.css";
 import { useAlert } from "react-alert";
 import { useSelector, useDispatch } from "react-redux";
-import { clearErrors, getProductDetail } from "../../Redux/Actions/productActions";
+import {  getProductDetail } from "../../Redux/Actions/productActions";
 import Carousel from "react-material-ui-carousel";
 import ReactStar from "react-star-rating-component";
 import ReviewCard from "../../component/ReviewCard";
 import Loader from "../../component/Loader";
+import PageHelmet from "../../component/PageHelmet"
 
 
 // match
@@ -22,8 +23,8 @@ const ProductDetail = ({ match }) => {
   // console.log(productDetail.images)
   useEffect(() => {
     if (error) {
-     alert.error(error);
-     dispatch({type:clearErrors()})
+   return  alert.error(error);
+    
     }
 
     dispatch(getProductDetail(match.params.id));
@@ -41,6 +42,7 @@ const ProductDetail = ({ match }) => {
   return (
   <Fragment>
     {loading? <Loader/>:(  <Fragment>
+      <PageHelmet title="Product-Detail"/>
       <div className="productDetails">
         <div>
           <Carousel sx={{width:"18vmax",height:"22vmax",textAlign:"center"}}>

@@ -1,5 +1,5 @@
 
-import {ALL_PRODUCT_REQUEST,ALL_PRODUCT_FAIL,ALL_PRODUCT_SUCCESS, CLEAR_ERROR, PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, PRODUCT_DETAILS_FAIL} from "../Types/productConstants";
+import {ALL_PRODUCT_REQUEST,ALL_PRODUCT_FAIL,ALL_PRODUCT_SUCCESS, PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, PRODUCT_DETAILS_FAIL} from "../Types/productConstants";
 
 
 
@@ -17,19 +17,19 @@ export const productReducer=(state={},action)=>{
                 // here getProducts and productsCount is comming from server or return by server
                 products:action.payload.getProducts,
                 productsCount:action.payload.productsCount,
-                resultPerPage:action.payload.resultPerPage
+                resultPerPage:action.payload.resultPerPage,
             }
         case ALL_PRODUCT_FAIL:
             return{
                 loading:false,
                 error:action.payload
             }
-        case CLEAR_ERROR:
-            return{
+        // case CLEAR_ERROR:
+        //     return{
                
-                ...state,
-                error:null
-            }
+        //         ...state,
+        //         error:null
+        //     }
         default:
           return  state;
     }

@@ -2,13 +2,16 @@
 import React, { useEffect } from 'react';
 import "./App.css"
 import {BrowserRouter as Router, Route} from "react-router-dom";
-import {layout} from './ReferenceConstant'
+// import {layout} from './ReferenceConstant'
 
 import Search from './component/Search';
 import WebFont from 'webfontloader'
-import {screens} from "./ReferenceConstant"
-
-
+// import {screens} from "./ReferenceConstant"
+import Home from './Screens/Home';
+import ProductDetail from './Screens/ProductDetails';
+import Products from './Screens/Products';
+import Header from './layout/Header';
+import Footer from './layout/Footer';
 
 function App() {
   useEffect(()=>{
@@ -23,15 +26,15 @@ function App() {
 
   return (
     <Router>
-      <layout.Header/>
-<Route exact path="/" component={screens.Home}/>
-<Route  exact path="/product/:id" component={screens.ProductDetail}/>
-<Route exact path="/products"  component={screens.Products} />
-<Route path="/products/:keyword"  component={screens.Products} />
+      <Header/>
+<Route exact path="/" component={Home}/>
+<Route  exact path="/product/:id" component={ProductDetail}/>
+<Route exact path="/products"  component={Products} />
+<Route path="/products/:keyword"  component={Products} />
 <Route exact path="/Search" component={Search}/>
 
 
-      <layout.Footer/>
+      <Footer/>
     </Router>
   )
 }

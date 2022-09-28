@@ -28,7 +28,8 @@ const Home = () => {
            return alert.error(error)
         }
         //only pass function name not paranthesis
-         dispatch(getAllProducts)
+       const homeProducts = getAllProducts()
+         dispatch(homeProducts)
     },[dispatch, error, alert])
    
     
@@ -54,8 +55,8 @@ const Home = () => {
         
             <div className="container" id="container">
         
-                {products && products.map((product)=>(
-                    <ProductCard key={product._id}  product={product}/>
+                {products && products?.map((product)=>(
+                    <ProductCard key={product?._id}  product={product}/>
                 ))}
           
             </div>

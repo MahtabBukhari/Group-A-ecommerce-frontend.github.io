@@ -1,13 +1,14 @@
 import React, { Fragment, useState } from 'react';
-import {useHistory} from "react-router-dom"
+// import {useHistory} from "react-router-dom"
+import PageHelmet from "../../component/PageHelmet"
 import "./Search.css"
 
 
-const Search = () => {
+const Search = ({history}) => {
     
     const [keyword, setKeyword]=useState("")
 
-    const history = useHistory()
+    // const history = useHistory()
 
     const handleSearchSubmit=(e)=>{
         e.preventDefault()
@@ -21,6 +22,7 @@ const Search = () => {
 
   return (
    <Fragment>
+       <PageHelmet title="Search"/>
        <form className='searchBox' onSubmit={handleSearchSubmit}>
         <input type="text" placeholder='Seach Products ...' onChange={e=>setKeyword(e.target.value)}/>
         <input type="submit" value="Search" />
